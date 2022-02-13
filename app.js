@@ -55,3 +55,52 @@ console.log(testResults.indexOf(21)) // -1
 let user = [{name: 'Yeva'}];
 console.log(user.indexOf({name: 'Yeva'})) // -1
 // indexOf won't work with objects
+
+
+
+
+// find() & findIndex()
+
+let personData = [{name: 'Max'}, {name: 'Manuel'}];
+
+let manuel = personData.find((person, index, persons) => {
+    return person.name ==='Manuel'
+});
+console.log(manuel);
+
+let manuelIndex = personData.findIndex((person, index, persons) => {
+    return person.name ==='Manuel'
+});
+console.log(manuelIndex);
+
+
+
+// includes()  // true or false
+
+console.log(testResults.includes(154));
+
+
+// forEach() method Alternative to for Loops, dosen't have to return anything
+
+const prices = [5.99, 29.99, 6.99, 7.99];
+const tax = 0.19;
+const taxAdjustedPrices = [];
+
+prices.forEach((price, index, prices) => {
+    taxAdjustedPrices.push(price*(1 + tax));
+});
+
+console.log(taxAdjustedPrices);
+
+
+// map() method return new Array
+
+const newPrices = [5.99, 29.99, 6.99, 7.99];
+const newTax = 0.19;
+
+let taxAdjustedPrices1 = newPrices.map((price, index, prices) => {
+    const newPrice = (price*(1 + newTax));
+    return newPrice;
+});
+
+console.log(taxAdjustedPrices1);
