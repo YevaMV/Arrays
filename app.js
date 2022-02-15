@@ -89,7 +89,6 @@ const taxAdjustedPrices = [];
 prices.forEach((price, index, prices) => {
     taxAdjustedPrices.push(price*(1 + tax));
 });
-
 console.log(taxAdjustedPrices);
 
 
@@ -102,5 +101,58 @@ let taxAdjustedPrices1 = newPrices.map((price, index, prices) => {
     const newPrice = (price*(1 + newTax));
     return newPrice;
 });
-
 console.log(taxAdjustedPrices1);
+
+
+//sort()ing and reverse()ing
+
+const sortedPrices = newPrices.sort((a, b) => {
+    if (a > b) {
+        return 1
+    } else if (a === b) {
+        return 0
+    } else {
+        return -1
+    }
+});
+console.log(sortedPrices.reverse())
+
+
+//filter()
+
+const filteredPrices = newPrices.filter((price, index, piices) => {
+    return price > 6;
+});
+console.log(filteredPrices)
+
+
+//arrow function
+
+const filteredPrices1 = newPrices.filter(price => price > 6);
+console.log(filteredPrices1)
+
+
+//reduce()
+
+const sum = newPrices.reduce((prevValue, curValue, curIndex, prices) => {
+    return prevValue + curValue;
+}, 0);
+console.log(sum);
+
+
+//split() - string method - string into array
+
+
+const data = 'new York;10.99;2000';
+
+const transformedData = data.split(';');
+transformedData[1] = +transformedData[1];
+console.log(transformedData); // ['new York', 10.99, '2000']
+
+
+//join()
+
+const nameFragments  = ['firstname', 'lastname'];
+const joinName = nameFragments.join(' ');
+console.log(joinName); // firstname lastname
+
