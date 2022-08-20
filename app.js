@@ -17,6 +17,8 @@ console.log(hobbies);
 const delEl = hobbies.splice(1, 1) // delete, negative index(-1) / last item
 console.log(delEl);
 
+splice(2) // Remove all elements, starting from index 2
+
 
 
 //slice() copy array, select part of array
